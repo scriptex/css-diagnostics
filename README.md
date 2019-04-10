@@ -2,7 +2,7 @@
 
 # CSS Diagnostics
 
-Highlight potentially invalid or erroneous HTML markup.
+> Highlight potentially invalid or erroneous HTML markup.
 
 An extension for Google's Chrome browser which highlights potentially invalid and erroneous HTML markup.
 
