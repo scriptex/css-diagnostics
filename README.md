@@ -14,7 +14,7 @@ Visit [Google Chrome's webstore](chrome.google.com/webstore)
 
 ## Installing from source
 
-1. Clone the repository: `git clone [git@github.com:angular/batarang.git](https://github.com/scriptex/css-diagnostics)`
+1. Clone the repository: `git clone https://github.com/scriptex/css-diagnostics`
 2. Navigate to `chrome://extensions` and enable Developer Mode.
 3. Choose "Load unpacked extension"
 4. In the dialog, open the directory you just cloned.
