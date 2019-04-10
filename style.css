@@ -1,0 +1,365 @@
+/**
+ * CSS DIAGNOSTICS
+ *
+ * ------------------------
+ *
+ * Heavily influenced by Holmes (http://github.com/redroot/holmes/)
+ *
+ * Holmes is not maintained since Nov 21, 2014.
+ * That's why it is used as a base for the current project.
+ *
+ * ------------------------
+ *
+ * CSS DIAGNOSTICS is browser extension for Google's Chrome browser that will highlight
+ * potentially invalid or erroneous HTML(5) markup
+ *
+ * ------------------------
+ *
+ * How does it work?
+ *
+ * When enabled, the extension sets the class 'css-diagnostics' to the <html> element.
+ * This enables the current stylesheet and allows debugging of errors in the HTML markup.
+ *
+ * ------------------------
+ *
+ * Debug colours and what they mean
+ *
+ * - RED 			denotes an error, invalid markup or a missing attribute
+ * - YELLOW 		denotes a warning, so potentionally erroneous markup or bad practice
+ * - DARK GREY		denotes a deprecated element or element with deprecated or Non-W3C attributes
+ *
+ */
+
+/**
+ * LINKS
+ */
+.css-diagnostics a:not([href]),
+.css-diagnostics a[href=''] {
+	outline: 2px solid red;
+}
+
+.css-diagnostics a[href='#'],
+.css-diagnostics a[href^='javascript'],
+.css-diagnostics a[title=''] {
+	outline: 2px solid #fd0;
+}
+
+/**
+ * Images
+ */
+.css-diagnostics img:not([alt]) {
+	outline: 2px solid red;
+}
+
+.css-diagnostics img[alt=''] {
+	outline: 2px solid #fd0;
+}
+
+/**
+ * Misc attributes
+ */
+.css-diagnostics label:not([for]),
+.css-diagnostics label[for=''],
+.css-diagnostics input:not([name]),
+.css-diagnostics input[name=''],
+.css-diagnostics select:not([name]),
+.css-diagnostics select[name=''],
+.css-diagnostics textarea:not([name]),
+.css-diagnostics textarea[name=''],
+.css-diagnostics abbr:not([title]),
+.css-diagnostics abbr[title=''],
+.css-diagnostics [class=''],
+.css-diagnostics [id=''],
+.css-diagnostics [style],
+.css-diagnostics [onclick],
+.css-diagnostics [onblur],
+.css-diagnostics [onfocus],
+.css-diagnostics [onselect],
+.css-diagnostics [onload],
+.css-diagnostics [onunload] {
+	outline: 2px solid #fd0;
+}
+
+/**
+ * DEPRECATED & NON-W3C CONTENT ELEMENTS (#a9a9a9)
+ * Based largely on http://www.w3.org/TR/html5/obsolete.html#obsolete
+ */
+.css-diagnostics applet,
+.css-diagnostics acronym,
+.css-diagnostics center,
+.css-diagnostics dir,
+.css-diagnostics font,
+.css-diagnostics strike,
+.css-diagnostics big,
+.css-diagnostics tt,
+.css-diagnostics marquee,
+.css-diagnostics hgroup,
+.css-diagnostics plaintext,
+.css-diagnostics xmp {
+	outline: 2px solid #a9a9a9;
+}
+
+.css-diagnostics body[background],
+.css-diagnostics body[bgproperties],
+.css-diagnostics body[topmargin],
+.css-diagnostics body[rightmargin],
+.css-diagnostics body[bottommargin],
+.css-diagnostics body[leftmargin] {
+	outline: 2px solid #a9a9a9;
+}
+
+.css-diagnostics *[bordercolor],
+.css-diagnostics *[bordercolordark],
+.css-diagnostics *[bordercolorlight],
+.css-diagnostics table[frame],
+.css-diagnostics table[summary] {
+	outline: 2px solid #a9a9a9;
+}
+
+.css-diagnostics *[align],
+.css-diagnostics *[valign],
+.css-diagnostics *[bgcolor],
+.css-diagnostics *[clear],
+.css-diagnostics ul[type],
+.css-diagnostics li[type] {
+	outline: 2px solid #a9a9a9;
+}
+
+/**
+ * EMPTY ELEMENTS (warning level for now)
+ */
+.css-diagnostics div:empty,
+.css-diagnostics span:empty,
+.css-diagnostics li:empty,
+.css-diagnostics p:empty,
+.css-diagnostics td:empty,
+.css-diagnostics th:empty {
+	outline: 2px solid #fd0;
+}
+
+/**
+ * Message
+ */
+.css-diagnostics a[href='#']:hover::after,
+.css-diagnostics a[href^='javascript']:hover::after,
+.css-diagnostics a[title='']:hover::after,
+.css-diagnostics img[alt='']:hover::after,
+.css-diagnostics div:empty:hover::after,
+.css-diagnostics span:empty:hover::after,
+.css-diagnostics li:empty:hover::after,
+.css-diagnostics p:empty:hover::after,
+.css-diagnostics td:empty:hover::after,
+.css-diagnostics th:empty:hover::after,
+.css-diagnostics [style]:hover::after {
+	border-radius: 0.5em;
+	display: block;
+	padding: 1em;
+	margin: 1em;
+	background: #fd0;
+	position: fixed;
+	color: #000;
+	left: 0px;
+	top: 0px;
+	z-index: 9999;
+}
+
+.css-diagnostics a:not([href]):hover::after,
+.css-diagnostics a[href='']:hover::after,
+.css-diagnostics img:not([alt]):hover:after,
+.css-diagnostics label:not([for]):hover::after,
+.css-diagnostics label[for='']:hover::after,
+.css-diagnostics input:not([name]):hover::after,
+.css-diagnostics input[name='']:hover::after,
+.css-diagnostics select:not([name]):hover::after,
+.css-diagnostics select[name='']:hover::after,
+.css-diagnostics textarea:not([name]):hover::after,
+.css-diagnostics textarea[name='']:hover::after,
+.css-diagnostics abbr:not([title]):hover::after,
+.css-diagnostics abbr[title='']:hover::after,
+.css-diagnostics [class='']:hover::after,
+.css-diagnostics [id='']:hover::after,
+.css-diagnostics applet:hover::after,
+.css-diagnostics acronym:hover::after,
+.css-diagnostics center:hover::after,
+.css-diagnostics dir:hover::after,
+.css-diagnostics font:hover::after,
+.css-diagnostics strike:hover::after,
+.css-diagnostics big:hover::after,
+.css-diagnostics tt:hover::after,
+.css-diagnostics marquee:hover::after,
+.css-diagnostics hgroup:hover::after,
+.css-diagnostics plaintext:hover::after,
+.css-diagnostics xmp:hover::after,
+.css-diagnostics *[bordercolor]:hover::after,
+.css-diagnostics *[bordercolordark]:hover::after,
+.css-diagnostics *[bordercolorlight]:hover::after,
+.css-diagnostics table[frame]:hover::after,
+.css-diagnostics table[summary]:hover::after,
+.css-diagnostics *[align]:hover::after,
+.css-diagnostics *[valign]:hover::after,
+.css-diagnostics *[bgcolor]:hover::after,
+.css-diagnostics *[clear]:hover::after,
+.css-diagnostics ul[type]:hover::after,
+.css-diagnostics li[type]:hover::after {
+	border-radius: 0.5em;
+	display: block;
+	padding: 1em;
+	margin: 1em;
+	background: red;
+	position: fixed;
+	background: #a9a9a9;
+	color: #000;
+	left: 0px;
+	top: 0px;
+	z-index: 9999;
+}
+
+.css-diagnostics body[background]:hover::after,
+.css-diagnostics body[bgproperties]:hover::after,
+.css-diagnostics body[topmargin]:hover::after,
+.css-diagnostics body[rightmargin]:hover::after,
+.css-diagnostics body[bottommargin]:hover::after,
+.css-diagnostics body[leftmargin]:hover::after {
+	border-radius: 0.5em;
+	display: block;
+	padding: 1em;
+	margin: 1em;
+	background: red;
+	position: fixed;
+	background: #a9a9a9;
+	color: #000;
+	bottom: 0px;
+	right: 0px;
+	z-index: 9999;
+}
+
+.css-diagnostics td:empty:hover::after,
+.css-diagnostics th:empty:hover::after {
+	top: 4em;
+}
+
+.css-diagnostics a:not([href]):hover::after,
+.css-diagnostics a[href='']:hover::after {
+	content: 'Missing href attribute';
+}
+
+.css-diagnostics a[href='#']:hover:after {
+	content: "href='#'";
+}
+
+.css-diagnostics a[href^='javascript']:hover:after {
+	content: 'Href has javascript';
+}
+
+.css-diagnostics a[title='']:hover::after {
+	content: 'Empty title attribute';
+}
+
+.css-diagnostics img:not([alt]):hover::after {
+	content: 'Missing alt attribute';
+}
+.css-diagnostics img[alt='']:hover::after {
+	content: 'No text in alt attribute';
+}
+
+.css-diagnostics label:not([for]):hover::after,
+.css-diagnostics label[for='']:hover::after {
+	content: 'Missing for attribute';
+}
+
+.css-diagnostics input:not([name]):hover::after,
+.css-diagnostics input[name='']:hover::after,
+.css-diagnostics select:not([name]):hover::after,
+.css-diagnostics select[name='']:hover::after,
+.css-diagnostics textarea:not([name]):hover::after,
+.css-diagnostics textarea[name='']:hover::after {
+	content: 'Missing name attribute';
+}
+
+.css-diagnostics abbr:not([title]):hover::after,
+.css-diagnostics abbr[title='']:hover::after {
+	content: 'Missing title attribute';
+}
+
+.css-diagnostics [class='']:hover::after {
+	content: 'Blank class attribute';
+}
+
+.css-diagnostics [id='']:hover::after {
+	content: 'Blank id attribute';
+}
+
+.css-diagnostics [style]:hover::after {
+	content: 'Element has inline styles';
+}
+
+.css-diagnostics applet:hover::after,
+.css-diagnostics acronym:hover::after,
+.css-diagnostics center:hover::after,
+.css-diagnostics dir:hover::after,
+.css-diagnostics font:hover::after,
+.css-diagnostics strike:hover::after,
+.css-diagnostics big:hover::after,
+.css-diagnostics tt:hover::after,
+.css-diagnostics marquee:hover::after,
+.css-diagnostics hgroup:hover::after,
+.css-diagnostics plaintext:hover::after,
+.css-diagnostics xmp:hover::after {
+	content: 'Deprecated or Non-W3C element';
+}
+
+.css-diagnostics body[background]:hover::after {
+	content: 'Deprecated or Non-W3C body attribute background';
+}
+
+.css-diagnostics body[bgproperties]:hover::after {
+	content: 'Deprecated or Non-W3C body attribute bgproperties';
+}
+
+.css-diagnostics body[topmargin]:hover::after,
+.css-diagnostics body[rightmargin]:hover::after,
+.css-diagnostics body[bottommargin]:hover::after,
+.css-diagnostics body[leftmargin]:hover::after {
+	content: 'Deprecated or Non-W3C body attribute *margin';
+}
+
+.css-diagnostics *[bordercolor]:hover::after,
+.css-diagnostics *[bordercolordark]:hover::after,
+.css-diagnostics *[bordercolorlight]:hover::after {
+	content: 'Deprecated or Non-W3C attribute bordercolor';
+}
+
+.css-diagnostics table[frame]:hover::after {
+	content: 'Deprecated or Non-W3C table attribute frame';
+}
+
+.css-diagnostics table[summary]:hover::after {
+	content: 'Deprecated or Non-W3C table attribute summary';
+}
+
+.css-diagnostics *[align]:hover::after,
+.css-diagnostics *[valign]:hover::after {
+	content: 'Deprecated or Non-W3C attribute *align';
+}
+
+.css-diagnostics *[bgcolor]:hover::after {
+	content: 'Deprecated or Non-W3C attribute bgcolor';
+}
+
+.css-diagnostics *[clear]:hover::after {
+	content: 'Deprecated or Non-W3C attribute clear';
+}
+
+.css-diagnostics ul[type]:hover::after,
+.css-diagnostics li[type]:hover::after {
+	content: 'Deprecated or Non-W3C list attribute type';
+}
+
+.css-diagnostics div:empty:hover::after,
+.css-diagnostics span:empty:hover::after,
+.css-diagnostics li:empty:hover::after,
+.css-diagnostics p:empty:hover::after,
+.css-diagnostics td:empty:hover::after,
+.css-diagnostics th:empty:hover::after {
+	content: 'Empty element!';
+}
