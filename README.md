@@ -25,6 +25,16 @@ Click the `Add to Chrome` button.
 
 Just click on the extension icon to turn on/off the diagnostics stylesheet.
 
+You will see warnings in yellow rectangles and errors in red rectangles.
+
+An explanation of the warning/error is given when you mouseover it.
+
+Don't hesitate to [file an issue](https://github.com/scriptex/css-diagnostics/issues/new) if you find something wrong or would like help.
+
+## Contributing
+
+Pull requests are welcome as long as they don't break the original idea of the extension.
+
 ## LICENSE
 
 MIT
