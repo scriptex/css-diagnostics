@@ -10,9 +10,17 @@ This extension uses a fork of the [Holmes](https://github.com/redroot/holmes) st
 
 ## Installing from the Web Store
 
+### On Google Chrome
+
 Visit [Google Chrome's webstore](https://chrome.google.com/webstore/detail/css-diagnostics/peaeggimiceafdnmebnjlfljfnjngfkf)
 
 Click the `Add to Chrome` button.
+
+### On Mozilla Firefox
+
+Visit [Firefox add-ons website](https://addons.mozilla.org/en-US/firefox/addon/css-diagnostics/)
+
+Click on the `+ Add to Firefox` button.
 
 ## Installing from source
 
