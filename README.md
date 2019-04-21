@@ -10,7 +10,9 @@ This extension uses a fork of the [Holmes](https://github.com/redroot/holmes) st
 
 ## Installing from the Web Store
 
-Visit [Google Chrome's webstore](chrome.google.com/webstore)
+Visit [Google Chrome's webstore](https://chrome.google.com/webstore/detail/css-diagnostics/peaeggimiceafdnmebnjlfljfnjngfkf)
+
+Click the `Add to Chrome` button.
 
 ## Installing from source
 
@@ -18,6 +20,10 @@ Visit [Google Chrome's webstore](chrome.google.com/webstore)
 2. Navigate to `chrome://extensions` and enable Developer Mode.
 3. Choose "Load unpacked extension"
 4. In the dialog, open the directory you just cloned.
+
+## Usage
+
+Just click on the extension icon to turn on/off the diagnostics stylesheet.
 
 ## LICENSE
 
