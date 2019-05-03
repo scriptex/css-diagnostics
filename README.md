@@ -1,3 +1,5 @@
+[![GitHub issues](https://img.shields.io/github/issues/scriptex/css-diagnostics.svg)](https://github.com/scriptex/css-diagnostics/issues)
+[![GitHub last commit](https://img.shields.io/github/last-commit/scriptex/css-diagnostics.svg)](https://github.com/scriptex/css-diagnostics/commits/master)
 [![Analytics](https://ga-beacon.appspot.com/UA-83446952-1/github.com/scriptex/css-diagnostics/README.md)](https://github.com/scriptex/css-diagnostics/)
 
 # CSS Diagnostics
