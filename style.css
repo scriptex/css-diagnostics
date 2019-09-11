@@ -31,6 +31,26 @@
  */
 
 /**
+ * HTML/HEAD tags
+ */
+.css-diagnostics:not([lang]),
+.css-diagnostics[lang=''] {
+	border: 2px solid #fd0;
+}
+
+.css-diagnostics head,
+.css-diagnostics head *:not(title),
+.css-diagnostics meta[charset]:not([charset='utf-8'])::before,
+.css-diagnostics meta[charset]:not(:first-child)::after,
+.css-diagnostics meta[name='viewport'][content*='user-scalable=no']::after,
+.css-diagnostics meta[name='viewport'][content*='maximum-scale']::after,
+.css-diagnostics meta[name='viewport'][content*='minimum-scale']::after,
+.css-diagnostics script[type='text/javascript']::after,
+.css-diagnostics link[rel='stylesheet'][type='text/css']::after {
+	display: block;
+}
+
+/**
  * LINKS
  */
 .css-diagnostics a:not([href]),
@@ -140,6 +160,13 @@
 /**
  * Message
  */
+.css-diagnostics meta[charset]:not([charset='utf-8'])::before,
+.css-diagnostics meta[charset]:not(:first-child)::after,
+.css-diagnostics meta[name='viewport'][content*='user-scalable=no']::after,
+.css-diagnostics meta[name='viewport'][content*='maximum-scale']::after,
+.css-diagnostics meta[name='viewport'][content*='minimum-scale']::after,
+.css-diagnostics script[type='text/javascript']::after,
+.css-diagnostics link[rel='stylesheet'][type='text/css']::after,
 .css-diagnostics a[href='#']:hover::after,
 .css-diagnostics a[href^='javascript']:hover::after,
 .css-diagnostics a[title='']:hover::after,
@@ -236,6 +263,28 @@
 .css-diagnostics td:empty:hover::after,
 .css-diagnostics th:empty:hover::after {
 	top: 4em;
+}
+
+.css-diagnostics meta[charset]:not([charset='utf-8'])::before {
+	content: 'Bad charset: ' attr(charset);
+}
+
+.css-diagnostics meta[charset]:not(:first-child)::after {
+	content: 'Bad charset: not first child';
+}
+
+.css-diagnostics meta[name='viewport'][content*='user-scalable=no']::after,
+.css-diagnostics meta[name='viewport'][content*='maximum-scale']::after,
+.css-diagnostics meta[name='viewport'][content*='minimum-scale']::after {
+	content: 'Bad viewport: ' attr(content) "Don't disable user's ability to zoom";
+}
+
+.css-diagnostics script[type='text/javascript']::after {
+	content: 'Unnecessary type attribute on script: ' attr(type);
+}
+
+.css-diagnostics link[rel='stylesheet'][type='text/css']::after {
+	content: 'Unnecessary type attribute on link: ' attr(type);
 }
 
 .css-diagnostics a:not([href]):hover::after,
