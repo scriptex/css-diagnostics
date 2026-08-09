@@ -1,6 +1,6 @@
 {
 	"name": "CSS Diagnostics",
-	"version": "1.0",
+	"version": "1.1",
 	"description": "Highlight potentially invalid or erroneous HTML markup",
 	"homepage_url": "https://github.com/scriptex/css-diagnostics",
 	"manifest_version": 3,
