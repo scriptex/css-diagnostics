@@ -12,6 +12,9 @@ An extension for Google's Chrome browser which highlights potentially invalid an
 
 This extension uses a fork of the [Holmes](https://github.com/redroot/holmes) stylesheet.
 
+See the extension on [Chrome Stats](https://chrome-stats.com/d/peaeggimiceafdnmebnjlfljfnjngfkf).
+
+
 ## Visitor stats
 
 ![GitHub stars](https://img.shields.io/github/stars/scriptex/css-diagnostics?style=social)
